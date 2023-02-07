@@ -19,14 +19,16 @@ public class Book {
     private Long id;
     private String title;
     private String author;
+    private  String image;
 
     public Book() {
     }
 
-    public Book(Long id, String title, String author) {
+    public Book(Long id, String title, String author, String image) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.image = image;
     }
 
     public Long getId() {
@@ -53,16 +55,25 @@ public class Book {
         this.author = author;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Book book)) return false;
-        return Objects.equals(getId(), book.getId()) && Objects.equals(getTitle(), book.getTitle()) && Objects.equals(getAuthor(), book.getAuthor());
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return id.equals(book.id) && title.equals(book.title) && author.equals(book.author) && image.equals(book.image);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getTitle(), getAuthor());
+        return Objects.hash(id, title, author, image);
     }
 
     @Override
@@ -71,6 +82,7 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
