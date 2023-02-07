@@ -12,7 +12,7 @@ import java.util.Map;
 @CrossOrigin(origins = "*")
 @SuppressWarnings("rawtypes")
 @RestController
-@RequestMapping("api/v1/books")
+@RequestMapping("/api/v1/books")
 public class BookController {
 
     @Autowired
@@ -39,6 +39,7 @@ public class BookController {
         Book current = bookRepository.findById(id).get();
         current.setAuthor(body.get("author"));
         current.setTitle(body.get("title"));
+        current.setImage(body.get("image"));
         bookRepository.save(current);
         return current;
     }
