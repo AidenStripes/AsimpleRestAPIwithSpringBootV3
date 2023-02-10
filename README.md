@@ -1,4 +1,4 @@
-# A simple Rest API with Spring Boot V3
+# A simple Rest API with Spring Boot
 
 built with spring boot version 3
 
