@@ -8,7 +8,6 @@ public class Book {
 
     @Id
     @SequenceGenerator(
-            name = "book_id_sequence",
             sequenceName = "book_id_sequence",
             allocationSize = 1
     )
